@@ -1,0 +1,55 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Первый герой",
+      "description": "Первый герой в рейтинге!",
+      "element": "fire"
+    },
+    {
+      "id": 2,
+      "name": "Неизвестный герой",
+      "description": "Скрывающийся в тени",
+      "element": "wind"
+    },
+    {
+      "id": 3,
+      "name": "Морской герой",
+      "description": "Как аквамен, но не из DC",
+      "element": "water"
+    },
+    {
+      "id": "994aee07-5875-4701-b060-a382e7a38234",
+      "name": "Железный человек",
+      "description": "Тони Старк",
+      "element": "earth"
+    }
+  ],
+  "filters": [
+    {
+      "name": "all",
+      "label": "Всё",
+      "clazz": "btn-outline-dark"
+    },
+    {
+      "name": "fire",
+      "label": "Огонь",
+      "clazz": "btn-danger"
+    },
+    {
+      "name": "water",
+      "label": "Вода",
+      "clazz": "btn-primary"
+    },
+    {
+      "name": "wind",
+      "label": "Воздух",
+      "clazz": "btn-success"
+    },
+    {
+      "name": "earth",
+      "label": "Земля",
+      "clazz": "btn-secondary"
+    }
+  ]
+}
