@@ -13,7 +13,7 @@ import './heroesAddForm.scss'
 const HeroesAddForm = () => {
     const { request } = useHttp();
     const dispatch = useDispatch();
-    const { filters, filtersLoadingStatus } = useSelector(state => state);
+    const { filters, filtersLoadingStatus } = useSelector(state => state.filters);
 
     useEffect(() => {
         dispatch(filtersFetching());
