@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { filtersFetching, filtersFetched, filtersFetchingError, filterActiveNew } from "../../actions";
+import { fetchFilters, filterActiveNew } from "../../actions";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useHttp } from "../../hooks/http.hook";
@@ -11,10 +11,7 @@ const HeroesFilters = () => {
     const { filters, filtersLoadingStatus, filterActive } = useSelector(state => state.filters);
 
     useEffect(() => {
-        dispatch(filtersFetching());
-        request("http://localhost:3001/filters")
-            .then(res => dispatch(filtersFetched(res)))
-            .catch(dispatch(filtersFetchingError()))
+        dispatch(fetchFilters(request));
             // eslint-disable-next-line
     }, []);
     

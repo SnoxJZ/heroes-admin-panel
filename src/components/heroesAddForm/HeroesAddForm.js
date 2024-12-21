@@ -3,7 +3,7 @@ import { Field, Form, Formik, ErrorMessage } from "formik";
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from 'uuid';
-import { filtersFetching, filtersFetched, filtersFetchingError } from "../../actions";
+import { fetchFilters } from "../../actions";
 
 import { heroAdded } from "../../actions";
 import { useHttp } from "../../hooks/http.hook";
@@ -16,10 +16,7 @@ const HeroesAddForm = () => {
     const { filters, filtersLoadingStatus } = useSelector(state => state.filters);
 
     useEffect(() => {
-        dispatch(filtersFetching());
-        request("http://localhost:3001/filters")
-            .then(res => dispatch(filtersFetched(res)))
-            .catch(dispatch(filtersFetchingError()))
+        dispatch(fetchFilters(request));
             // eslint-disable-next-line
     }, [])
 
