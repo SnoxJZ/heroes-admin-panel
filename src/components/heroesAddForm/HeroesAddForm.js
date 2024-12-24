@@ -1,11 +1,9 @@
-import { useEffect } from "react";
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from 'uuid';
-import { fetchFilters } from "../../actions";
 
-import { heroAdded } from "../../actions";
+import { heroAdded } from "../heroesList/heroesSlice";
 import { useHttp } from "../../hooks/http.hook";
 
 import './heroesAddForm.scss'
@@ -14,11 +12,6 @@ const HeroesAddForm = () => {
     const { request } = useHttp();
     const dispatch = useDispatch();
     const { filters, filtersLoadingStatus } = useSelector(state => state.filters);
-
-    useEffect(() => {
-        dispatch(fetchFilters(request));
-            // eslint-disable-next-line
-    }, [])
 
     const onAdd = (values) => {
         const id = uuidv4();
